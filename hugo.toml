@@ -1,0 +1,14 @@
+baseURL = "http://localhost:1313/"
+languageCode = "ko-kr"
+title = "Hugo Test Blog"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
