@@ -2,5 +2,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ .Title }} | {{ .Site.Title }}</title>
 
-{{ $style := resources.Get "scss/main.scss" | toCSS }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{- $scss := resources.Get "scss/main.scss" -}}
+{{- $css := $scss | toCSS (dict "enableSourceMap" false) | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
