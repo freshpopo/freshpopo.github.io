@@ -1,7 +1,17 @@
-<header>
+<header class="site-header">
   <nav>
     {{ range .Site.Menus.main }}
       <a href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}
+    <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
   </nav>
 </header>
+
+<script>
+document.getElementById('theme-toggle').onclick = function () {
+  const root = document.documentElement;
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+};
+</script>
