@@ -9,6 +9,11 @@ title = "Hugo Test Blog"
     weight = 1
 
   [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
+    name = "Test 1"
+    url = "/test1/"
     weight = 2
+
+  [[menu.main]]
+    name = "Test 2"
+    url = "/test2/"
+    weight = 3
